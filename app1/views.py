@@ -20,8 +20,6 @@ class TodoListCreateAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TodoDetailAPIView(APIView):
-    def get_object(self, pk):
-        return get_object_or_404(Todo, pk=pk)
 
     def get(self, request, pk):
         todo = self.get_object(pk)
